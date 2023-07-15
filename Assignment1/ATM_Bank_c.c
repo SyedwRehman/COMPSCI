@@ -28,7 +28,7 @@ int main()
         /*It should be noted that scanf when taking in an int is able to take in floats as inputs but
         ignores their decimals which allows it to be able to still keep and use the actual integer.
         This case can be seen more clearly when switching accounts with inputs like 2.99 and is not accounted for.
-        String inputs however result in a value of 0 for scanf and are accounted for by the reccomended code from the TA.*/
+        String inputs however result in a value of 0 for scanf and are accounted for by the recommended code from the TA.*/
 
         if (Default_Accounts <=0) // condition for if the number of accounts is negative or 0
         {
@@ -46,7 +46,7 @@ int main()
         }
         while (getchar() != '\n'); /* Used to eliminate unwanted inputs such as strings from the input buffer
         until the getchar reaches \n. This allows scanf to read the next input properly in the next loop.
-        This code was a solution reccomended by the TA to help with the string inputs*/
+        This code was a solution recommended by the TA to help with the string inputs*/
     } while (pass == 0); // condition stating to continue doing the loop while pass is equal to 0 and stops when pass is 1
 
     do

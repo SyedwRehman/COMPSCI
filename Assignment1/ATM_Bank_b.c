@@ -31,7 +31,7 @@ int main()
         
         while (getchar() != '\n'); /* Used to eliminate unwanted inputs such as strings from the input buffer
         until the getchar reaches \n. This allows scanf to read the next input properly in the next loop.
-        This code was a solution reccomended by the TA to help with the string inputs*/
+        This code was a solution recommended by the TA to help with the string inputs*/
 
    } while ( Balance <= 0); // condition makes the loop continue until the balance has a proper input that is more than 0
    
@@ -63,7 +63,7 @@ int main()
     
     /*It should be noted that scanf when taking in an int is able to take in floats as inputs but
     ignores their decimals which allows it to be able to still keep and use the actual integer.
-    String inputs result in a value of 0 for scanf and are accounted for by the reccomended code from the TA.*/
+    String inputs result in a value of 0 for scanf and are accounted for by the recommended code from the TA.*/
     
     switch (choice){ // switches between all of the cases depending on the user's choice
         case 0: // This case allows the user to exit the loop
