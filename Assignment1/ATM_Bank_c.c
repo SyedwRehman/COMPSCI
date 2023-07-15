@@ -5,13 +5,13 @@
 // main function
 int main()
 {
-   int Default_Accounts; // int variable used to store number of accounts
+   int Default_Accounts; // int variable used to store the number of accounts
    float Balance; // float variable used to store the Balance of the user's account
    float Balances[Default_Accounts]; // array of floats used to store the balances of each account
    int choice = 10; // choice variable used to move through the menu. it has a placeholder of 10 instead of a random value
    float Deposit; // float variable used to store the deposit amount from the user input
    float Withdraw; // float variable used to store user input for drawing money
-   float rate; // float variable used to hold the intrest rate from the user
+   float rate; // float variable used to hold the interest rate from the user
    int years; // int variable used to hold the number of years for the future balance operation
    float FutureBalance; // float variable used to hold the future balance result
    int AccountD=0; // int variable used as the default account to move through the array of balances
@@ -73,9 +73,9 @@ int main()
     
     do
     {
-        printf("\nEnter intrest rate (ex: 1.45 for 1.45%%)\n");
-        scanf("%f",&rate); // takes input for the intrest rate
-        if (rate <=0) // condition for if the intrest rate is negative
+        printf("\nEnter interest rate (ex: 1.45 for 1.45%%)\n");
+        scanf("%f",&rate); // takes input for the interest rate
+        if (rate <=0) // condition for if the interest rate is negative
         {
             printf("Enter a positive valid rate\n");
             pass = 0; // fails exit condition
@@ -106,7 +106,7 @@ int main()
     switch (choice){ // switches between all of the cases depending on the user's choice
         case 0: // This case allows the user to exit the loop
             printf("\nExiting\n");
-            break; // break is used through out all of the cases to not follow through to the next case after finishing the first one
+            break; // break is used throughout all of the cases to not follow through to the next case after finishing the first one
         case 1: // This case allows the user to Deposit an amount into their balance
             do
             {
@@ -129,7 +129,7 @@ int main()
             {
                 printf("Enter the Withdraw amount:\n");
                 scanf("%f", &Withdraw); // takes in user's drawing amount
-                if (Withdraw <= 0) // checks for amount below or equal to 0
+                if (Withdraw <= 0) // checks for if the amount is below or equal to 0
                 {
                     printf("Enter valid draw amount (ex: 100)\n");
                     pass = 0;
@@ -139,7 +139,7 @@ int main()
                     printf("You are drawing more than your current balance of $%.2f\n",Balance);
                     pass = 0;
                 }
-                else if (Balance == Withdraw) // checks if the balance if equal to the withdraw amount
+                else if (Balance == Withdraw) // checks if the balance is equal to the withdraw amount
                 {
                     printf("This would draw all your balance please enter a lower amount and try again\n");
                     pass =0;   
@@ -200,12 +200,12 @@ int main()
                 {
                     Temp = Balance; // Temporary variable takes in the current balance
                     Balances[AccountD] = Temp; // updates the current account or with its current balance using the temp variable
-                    Balance = Balances[AccountN-1]; // updates the current balance to be the balance of the account the user inputed
-                    AccountD = AccountN-1; // updates the default account or current account to be the account the user inputed
+                    Balance = Balances[AccountN-1]; // updates the current balance to be the balance of the account the user inputted
+                    AccountD = AccountN-1; // updates the default account or current account to be the account the user inputted
                     printf("You are now in Account #%d with a balance of $%.2f\n",AccountN,Balance);
                     pass = 1; // satisfies the exit condition
                 }
-                // no else condition needed due to the other conditions handeling the valid inputs
+                // no else condition is needed due to the other conditions handling the valid inputs
                 while (getchar() != '\n'); 
             }while (pass ==0);
             break;
@@ -221,103 +221,3 @@ int main()
     }
    } while (choice !=0); // exit condition for the menu which is the first case
 }// end of the main function and code
-
-
-/*
-#include <stdio.h>
-#include <math.h>
-
-int main()
-{
-   int Default_Accounts =10;
-   float Balance;
-   float Balances[Default_Accounts];
-   int choice = 10;
-   float Deposit;
-   float Withdraw;
-   float rate;
-   int years;
-   float FutureBalance;
-   int AccountD=0;
-   int AccountN;
-   // Pedram said not to worry about the letters that much and if you really did want to to convert the pointer value into a string find the float in there and then proceed with that as the solution
-
-   do
-   {
-    printf("Enter the number of bank accounts being used (ex: 5 for 5 accounts):\n");
-    scanf("%d",&Default_Accounts);
-    printf("Enter valid Bank balance for each account\n");
-    printf("%d\n\n",Default_Accounts);
-    for ( int i = 0; i < Default_Accounts; i++)
-    {
-        printf("Enter balance for acccount %d\n", i+1);
-        scanf("%f",&Balances[i]);
-    }
-    Balance = Balances[AccountD];
-   } while (Default_Accounts == 0);
-
-   printf("Your Accounts have been entered and balances updated\n");
-   printf("Operations are done on Account 1 as a default\n");
-   
-   do
-   {
-    printf("\nSelect an operation:\n");
-    printf("1. Deposit\n");
-    printf("2. Withdraw\n");
-    printf("3. Check Balance\n");
-    printf("4. Future Balance Using Interest Rate\n");
-    printf("5. Switch Account\n");
-    printf("6. Display All Balances\n");
-    printf("0. exit\n");
-    scanf("%d", &choice);
-    
-    switch (choice){
-        case 0:
-            printf("\nExiting\n");
-            break;
-        case 1:
-            printf("Enter the Deposit amount:\n");
-            scanf("%f", &Deposit);
-            Balance += Deposit;
-            break;
-        case 2:
-            printf("Enter the amount to Withdraw:\n");
-            scanf("%f", &Withdraw);
-            Balance -= Withdraw;
-            break;
-        case 3:
-            printf("Your Balance is: %.2f \n", Balance);
-            break;
-        case 4:
-            printf("Enter the interest rate as a percentage (ex: enter 5 for a rate of 5%% ):\n");
-            scanf("%f",&rate);
-            printf("Enter the number of years for the future balance (ex: enter 6 for 6 years of interest):\n");
-            scanf("%d",&years);
-            FutureBalance = Balance*(pow(1+(rate/100),years));
-            printf("Your Future Balance after %d year(s) with a rate of %.2f%% will be  $%.2f\n",years,rate,FutureBalance);
-            break;
-        case 5:
-            float Temp;
-            printf("What account number do you want to switch to? enter numbers from 1 to %d\n",Default_Accounts);
-            scanf("%d",&AccountN);
-            // put an if statement to catch inputs that are below or over range of default accounts
-            Temp = Balance;
-            Balances[AccountD] = Temp;
-            Balance = Balances[AccountN-1];
-            AccountD = AccountN-1;
-            printf("You are now in Account #%d with a balance of %.2f\n",AccountN,Balance);
-            break;
-        case 6:
-            Balances[AccountD] =Balance;
-            for ( int i = 0; i < Default_Accounts; i++)
-            {
-                printf("Account #%d has a Balance of: %.2f\n",i+1,Balances[i]);   
-            }
-            break;
-        default:
-            printf("Invalid option try again\n");
-    }
-   } while (choice !=0); 
-
-}
-*/

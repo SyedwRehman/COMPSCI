@@ -45,7 +45,7 @@ int main()
     switch (choice){ // switches between all of the cases depending on the user's choice
         case 0: // This case allows the user to exit the loop
             printf("\nExiting\n");
-            break; // break is used through out all of the cases to not follow through to the next case after finishing the first one
+            break; // break is used throughout all of the cases to not follow through to the next case after finishing the first one
         case 1: // This case allows the user to Deposit an amount into their balance
             do
             {
@@ -68,7 +68,7 @@ int main()
             {
                 printf("Enter the Withdraw amount:\n");
                 scanf("%f", &Withdraw); // takes in user's drawing amount
-                if (Withdraw <= 0) // checks for amount below or equal to 0
+                if (Withdraw <= 0) // checks for if the amount is below or equal to 0
                 {
                     printf("Enter valid draw amount (ex: 100)\n");
                     pass = 0;                    
@@ -78,7 +78,7 @@ int main()
                     printf("You are drawing more than your current balance of $%.2f\n",Balance);
                     pass = 0;
                 }
-                else if (Balance == Withdraw) // checks if the balance if equal to the withdraw amount
+                else if (Balance == Withdraw) // checks if the balance is equal to the withdraw amount
                 {
                     printf("This would draw all your balance please enter a lower amount and try again\n");
                     pass =0; 

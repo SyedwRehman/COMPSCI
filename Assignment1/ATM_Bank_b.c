@@ -10,7 +10,7 @@ int main()
    int choice = 10; // choice variable used to move through the menu. it has a placeholder of 10 instead of a random value
    float Deposit; // float variable used to store the deposit amount from the user input
    float Withdraw; // float variable used to store user input for drawing money
-   float rate; // float variable used to hold the intrest rate from the user
+   float rate; // float variable used to hold the interest rate from the user
    int years; // int variable used to hold the number of years for the future balance operation
    float FutureBalance; // float variable used to hold the future balance result
    int pass = 0; // pass variable used to determine if conditions are met to continue through the rest of the function
@@ -37,9 +37,9 @@ int main()
    
    do
     {
-        printf("\nEnter intrest rate (ex: 1.45 for 1.45%%)\n");
-        scanf("%f",&rate); // takes input for the intrest rate
-        if (rate <=0) // condition for if the intrest rate is negative
+        printf("\nEnter interest rate (ex: 1.45 for 1.45%%)\n");
+        scanf("%f",&rate); // takes input for the interest rate
+        if (rate <=0) // condition for if the interest rate is negative
         {
             printf("Enter a positive valid rate\n");
             pass = 0; // fails exit condition
@@ -68,7 +68,7 @@ int main()
     switch (choice){ // switches between all of the cases depending on the user's choice
         case 0: // This case allows the user to exit the loop
             printf("\nExiting\n");
-            break; // break is used through out all of the cases to not follow through to the next case after finishing the first one
+            break; // break is used throughout all of the cases to not follow through to the next case after finishing the first one
         case 1: // This case allows the user to Deposit an amount into their balance
             do
             {
@@ -91,7 +91,7 @@ int main()
             {
                 printf("Enter the Withdraw amount:\n");
                 scanf("%f", &Withdraw); // takes in user's drawing amount
-                if (Withdraw <= 0) // checks for amount below or equal to 0
+                if (Withdraw <= 0) // checks for if the amount is below or equal to 0
                 {
                     printf("Enter valid draw amount (ex: 100)\n");
                     pass = 0;
@@ -101,7 +101,7 @@ int main()
                     printf("You are drawing more than your current balance of $%.2f\n",Balance);
                     pass = 0;
                 }
-                else if (Balance == Withdraw) // checks if the balance if equal to the withdraw amount
+                else if (Balance == Withdraw) // checks if the balance is equal to the withdraw amount
                 {
                     printf("This would draw all your balance please enter a lower amount and try again\n");
                     pass =0;   
