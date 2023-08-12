@@ -4,7 +4,6 @@
 #include <time.h>
 #include <string.h>
 #include <sodium.h> // For randombytes_buf function
-
 #include "constants.h"
 #include "mymodel.h"
 
@@ -12,6 +11,7 @@ double sigmoid(double x) // Function for Sigmoid results
 {
     return 1.0/(1.0 + exp(-x));
 }
+
 
 
 double random_double(double min, double max) // Function for random number
@@ -127,6 +127,7 @@ void ForwardPass(int num_train, double X_train[][num_inputs], double Y_train[][n
         }
     }
 }
+
 
 
 void BackwardPass(int num_train, double X_train[][num_inputs], double Y_train[][num_outputs],

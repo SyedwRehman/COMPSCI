@@ -4,7 +4,6 @@
 #include <time.h>
 #include <string.h>
 #include <sodium.h> // For randombytes_buf function
-
 #include "constants.h"
 #include "mymodel.h"
 
@@ -29,10 +28,10 @@ int main()
 
     for (int row = 0; row < num_train; row++) // loop to set up the input and output values for the training variables
     {
-        X_train[row][0] = data[row][0]; // sets up the first input for the training data set (eg. 0.552926454894949)
-        X_train[row][1] = data[row][1]; // sets up the second input for the training data set (eg. 0.466761075682240)
-        Y_train[row][0] = data[row][2]; // sets up the first output for the training data set (eg. 1)
-        Y_train[row][1] = data[row][3]; // sets up the second output for the training data set (eg. 0)
+        X_train[row][0] = data[row][0]; // sets up the first input for the training data set 
+        X_train[row][1] = data[row][1]; // sets up the second input for the training data set 
+        Y_train[row][0] = data[row][2]; // sets up the first output for the training data set 
+        Y_train[row][1] = data[row][3]; // sets up the second output for the training data set 
     }
 
     for (int row = num_train; row < MAX_ROWS; row++) // looping the validation data set after the num_train or train data set values

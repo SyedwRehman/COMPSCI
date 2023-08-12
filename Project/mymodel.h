@@ -24,6 +24,4 @@ void Evaluation(int num_train, double X_train[][num_inputs], double Y_train[][nu
                  double a2[][num_train], double a3[][num_train], double a4_eval_train[][num_train],
                  double X_val[][num_inputs],double Y_val[][num_inputs],int num_val, int ep);
 
-
-
 #endif
